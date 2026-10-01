@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mon quiz</title>
+
+  <style>
+
+    .message-excellent {
+    color: green;
+    font-weight: bold;
+  }
+
+  .message-bon {
+    color: #0a6117;
+    font-weight: bold;
+  }
+
+  .message-moyen {
+    color: rgb(248, 232, 5);
+    font-weight: bold;
+  }
+
+  .message-faible {
+    color: red;
+    font-weight: bold;
+  }
+    body {
+      font-family: Arial, sans-serif;
+      background: #5c2d35;
+      padding: 30px 16px;
+      text-align: center;
+    }
+
+    #titre {
+      color: rgb(56, 219, 41);
+    }
+
+    #quiz {
+      max-width: 600px;
+      margin: 40px auto 0;
+      padding: 24px;
+      background: rgb(82, 173, 189);
+      border-radius: 10px;
+    }
+
+    fieldset {
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #c00b04;
+      border-radius: 6px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0;
+    }
+
+    button {
+      padding: 12px 18px;
+      margin: 8px;
+      border: 0;
+      border-radius: 5px;
+      background: #1769aa;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0e4f85;
+    }
+
+    #resultat {
+      font-weight: bold;
+    }
+
+    .bonne-reponse {
+      color: green;
+      font-weight: bold;
+    }
+
+    .mauvaise-reponse {
+      color: red;
+      font-weight: bold;
+    }
+
+    .explication-choix {
+      display: block;
+      margin: 4px 0 0 24px;
+      font-size: 0.9em;
+    }
+
+    #progression {
+  width: 100%;
+  height: 18px;
+  accent-color: #1467ac;
+}
+  </style>
+
+</head>
+
+<body>
+  <h1 id="titre">Bonjour, bienvenue !</h1>
+  <p id="introduction">Voici mon premier site !</p>
+ 
+
+  <form id="quiz">
+    <h2>Petit quiz</h2>
+    <p id="progression-texte">0 question sur 12 répondue(s)</p>
+<progress id="progression" value="0" max="12"></progress>
+
+    <fieldset>
+      <legend>1. Quelle est la capitale de la France ?</legend>
+      <label><input type="radio" name="q1" value="a" required> Paris</label>
+      <label><input type="radio" name="q1" value="b"> Lyon</label>
+      <label><input type="radio" name="q1" value="c"> Marseille</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Combien y a-t-il de jours dans une semaine ?</legend>
+      <label><input type="radio" name="q2" value="a" required> 7</label>
+      <label><input type="radio" name="q2" value="b"> 6</label>
+      <label><input type="radio" name="q2" value="c"> 5</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Quel animal dit « miaou » ?</legend>
+      <label><input type="radio" name="q3" value="a" required> Le chien</label>
+      <label><input type="radio" name="q3" value="b"> Le chat</label>
+      <label><input type="radio" name="q3" value="c"> Le cheval</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Combien font 2 + 2 ?</legend>
+      <label><input type="radio" name="q4" value="a" required> 6</label>
+      <label><input type="radio" name="q4" value="b"> 4</label>
+      <label><input type="radio" name="q4" value="c"> 3</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>5. Quel sport se joue avec un ballon ovale et des poteaux ?</legend>
+      <label><input type="radio" name="q5" value="a" required> Le handball</label>
+      <label><input type="radio" name="q5" value="b"> Le football</label>
+      <label><input type="radio" name="q5" value="c"> Le rugby</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>6. Dans quel pays se trouve la ville de Rome ?</legend>
+      <label><input type="radio" name="q6" value="a" required> Espagne</label>
+      <label><input type="radio" name="q6" value="b"> Italie</label>
+      <label><input type="radio" name="q6" value="c"> France</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>7. Quelle planète habitons-nous ?</legend>
+      <label><input type="radio" name="q7" value="a" required> Vénus</label>
+      <label><input type="radio" name="q7" value="b"> Mars</label>
+      <label><input type="radio" name="q7" value="c"> La Terre</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>8. Quel instrument possède généralement 88 touches ?</legend>
+      <label><input type="radio" name="q8" value="a" required> Le violon</label>
+      <label><input type="radio" name="q8" value="b"> Le piano</label>
+      <label><input type="radio" name="q8" value="c"> La guitare</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>9. Quelle planète est surnommée la planète rouge ?</legend>
+      <label><input type="radio" name="q9" value="a" required> Pluton</label>
+      <label><input type="radio" name="q9" value="b"> Vénus</label>
+      <label><input type="radio" name="q9" value="c"> Mars</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>10. Quel personnage Disney a de grandes oreilles rondes ?</legend>
+      <label><input type="radio" name="q10" value="a" required> Mickey Mouse</label>
+      <label><input type="radio" name="q10" value="b"> Donald Duck</label>
+      <label><input type="radio" name="q10" value="c"> Goofy</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>11. Quel sorcier a une cicatrice en forme d’éclair ?</legend>
+      <label><input type="radio" name="q11" value="a" required> Ron Weasley</label>
+      <label><input type="radio" name="q11" value="b"> Harry Potter</label>
+      <label><input type="radio" name="q11" value="c"> Hermione Granger</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>12. Quel super-héros porte une cape rouge et une tenue bleue ?</legend>
+      <label><input type="radio" name="q12" value="a" required> Iron Man</label>
+      <label><input type="radio" name="q12" value="b"> Batman</label>
+      <label><input type="radio" name="q12" value="c"> Superman</label>
+    </fieldset>
+
+    <button type="submit">Voir mon score</button>
+    <button type="button" id="recommencer">Recommencer</button>
+    <p id="resultat" role="status"></p>
+  </form>
+
+ <script>
+  const quiz = document.getElementById("quiz");
+  const resultat = document.getElementById("resultat");
+  const barreProgression = document.getElementById("progression");
+  const texteProgression = document.getElementById("progression-texte");
+
+  const reponses = {
+    q1: "a",
+    q2: "a",
+    q3: "b",
+    q4: "b",
+    q5: "c",
+    q6: "b",
+    q7: "c",
+    q8: "b",
+    q9: "c",
+    q10: "a",
+    q11: "b",
+    q12: "c"
+  };
+
+  const nombreQuestions = Object.keys(reponses).length;
+  barreProgression.max = nombreQuestions;
+
+  const explications = {
+    q1: {
+      a: "Paris est la capitale de la France.",
+      b: "Lyon est une grande ville française, mais pas la capitale.",
+      c: "Marseille est une grande ville française, mais pas la capitale."
+    },
+    q2: {
+      a: "Une semaine compte 7 jours.",
+      b: "Une semaine compte 7 jours, pas 6.",
+      c: "Une semaine compte 7 jours, pas 5."
+    },
+    q3: {
+      a: "Le chien aboie ; il ne dit pas miaou.",
+      b: "Le chat miaule : il dit « miaou ».",
+      c: "Le cheval hennit."
+    },
+    q4: {
+      a: "2 + 2 donne 4, pas 6.",
+      b: "2 + 2 = 4.",
+      c: "2 + 2 donne 4, pas 3."
+    },
+    q5: {
+      a: "Le handball se joue avec un ballon rond.",
+      b: "Le football se joue avec un ballon rond.",
+      c: "Le rugby se joue avec un ballon ovale et des poteaux."
+    },
+    q6: {
+      a: "Rome est en Italie, pas en Espagne.",
+      b: "Rome est la capitale de l’Italie.",
+      c: "Rome n’est pas en France."
+    },
+    q7: {
+      a: "Vénus est une autre planète.",
+      b: "Mars est une autre planète.",
+      c: "Nous habitons sur la Terre."
+    },
+    q8: {
+      a: "Un violon n’a pas 88 touches.",
+      b: "Un piano standard possède généralement 88 touches.",
+      c: "Une guitare n’a pas 88 touches."
+    },
+    q9: {
+      a: "Pluton est une planète naine, mais ce n’est pas la planète rouge.",
+      b: "Vénus n’est pas surnommée la planète rouge.",
+      c: "Mars est surnommée la planète rouge à cause de sa couleur."
+    },
+    q10: {
+      a: "Mickey Mouse est reconnaissable à ses grandes oreilles rondes.",
+      b: "Donald Duck est un canard.",
+      c: "Goofy est un chien."
+    },
+    q11: {
+      a: "Ron Weasley est l’ami de Harry Potter.",
+      b: "Harry Potter a une cicatrice en forme d’éclair.",
+      c: "Hermione Granger est l’amie de Harry Potter."
+    },
+    q12: {
+      a: "Iron Man porte une armure, pas cette cape.",
+      b: "Batman porte généralement une cape noire.",
+      c: "Superman porte une cape rouge et une tenue bleue."
+    }
+  };
+
+  function mettreAJourProgression() {
+    const repondues = quiz.querySelectorAll(
+      'input[type="radio"]:checked'
+    ).length;
+
+    barreProgression.value = repondues;
+    texteProgression.textContent =
+      `${repondues} question(s) sur ${nombreQuestions} répondue(s)`;
+  }
+
+  function effacerCorrections() {
+    quiz.querySelectorAll(".explication-choix").forEach(function (element) {
+      element.remove();
+    });
+
+    quiz.querySelectorAll("label").forEach(function (label) {
+      label.classList.remove("bonne-reponse", "mauvaise-reponse");
+    });
+  }
+
+  quiz.addEventListener("change", mettreAJourProgression);
+  mettreAJourProgression();
+
+  document.getElementById("recommencer").addEventListener("click", function () {
+    quiz.reset();
+    mettreAJourProgression();
+    effacerCorrections();
+    resultat.textContent = "";
+    resultat.className = "";
+  });
+
+  quiz.addEventListener("submit", function (evenement) {
+    evenement.preventDefault();
+    effacerCorrections();
+
+    let score = 0;
+
+    for (const nom in reponses) {
+      const choix = quiz.querySelector(`input[name="${nom}"]:checked`);
+      const bonneValeur = reponses[nom];
+
+      if (choix.value === bonneValeur) {
+        score++;
+      } else {
+        choix.closest("label").classList.add("mauvaise-reponse");
+      }
+
+      const bonneOption = quiz.querySelector(
+        `input[name="${nom}"][value="${bonneValeur}"]`
+      );
+      bonneOption.closest("label").classList.add("bonne-reponse");
+
+      quiz.querySelectorAll(`input[name="${nom}"]`).forEach(function (option) {
+        const explication = document.createElement("small");
+        explication.className = "explication-choix";
+        explication.textContent = explications[nom][option.value];
+        option.closest("label").appendChild(explication);
+      });
+    }
+
+    let message = "";
+    let classe = "";
+
+    if (score === nombreQuestions) {
+      message = "Excellent ! Score parfait !";
+      classe = "message-excellent";
+    } else if (score >= 9) {
+      message = "Très bien ! Tu es presque parfait.";
+      classe = "message-bon";
+    } else if (score >= 6) {
+      message = "Pas mal ! Tu as compris l’essentiel.";
+      classe = "message-moyen";
+    } else if (score >= 3) {
+      message = "Tu peux encore t’améliorer, continue !";
+      classe = "message-faible";
+    } else {
+      message = "Il faut réessayer, mais tu progresses !";
+      classe = "message-faible";
+    }
+
+    resultat.className = classe;
+    resultat.textContent =
+      `Tu as obtenu ${score} bonne(s) réponse(s) sur ${nombreQuestions}. ${message}`;
+  });
+</script>
+</body>
+</html>
