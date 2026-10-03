@@ -28,20 +28,20 @@
   }
     body {
       font-family: Arial, sans-serif;
-      background: #5c2d35;
+      background: #b8a0a4;
       padding: 30px 16px;
       text-align: center;
     }
 
     #titre {
-      color: rgb(56, 219, 41);
+      color: rgb(255, 251, 5);
     }
 
     #quiz {
       max-width: 600px;
       margin: 40px auto 0;
       padding: 24px;
-      background: rgb(82, 173, 189);
+      background: rgb(250, 251, 252);
       border-radius: 10px;
     }
 
@@ -98,6 +98,35 @@
   height: 18px;
   accent-color: #1467ac;
 }
+#classement-section {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+}
+
+#classement-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+#classement-section th,
+#classement-section td {
+  padding: 12px;
+  border: 1px solid #c00b04;
+  text-align: center;
+}
+
+#classement-section th {
+  background: #1769aa;
+  color: white;
+}
+
+#classement-section tbody tr:nth-child(even) {
+  background: #f2f2f2;
+}
   </style>
 
 </head>
@@ -109,56 +138,65 @@
 
   <form id="quiz">
     <h2>Petit quiz</h2>
+    <label for="pseudo">Ton pseudo (20 caractères maximum) :</label>
+<input
+  id="pseudo"
+  name="pseudo"
+  type="text"
+  minlength="1"
+  maxlength="20"
+  required
+>
     <p id="progression-texte">0 question sur 12 répondue(s)</p>
 <progress id="progression" value="0" max="12"></progress>
 
     <fieldset>
-      <legend>1. Quelle est la capitale de la France ?</legend>
-      <label><input type="radio" name="q1" value="a" required> Paris</label>
-      <label><input type="radio" name="q1" value="b"> Lyon</label>
-      <label><input type="radio" name="q1" value="c"> Marseille</label>
+      <legend>1. Quelle est la capitale de la Mongolie ? ?</legend>
+      <label><input type="radio" name="q1" value="a" required> Ulan-Bator</label>
+      <label><input type="radio" name="q1" value="b"> Beijing</label>
+      <label><input type="radio" name="q1" value="c"> Tokyo</label>
     </fieldset>
 
     <fieldset>
-      <legend>2. Combien y a-t-il de jours dans une semaine ?</legend>
-      <label><input type="radio" name="q2" value="a" required> 7</label>
-      <label><input type="radio" name="q2" value="b"> 6</label>
-      <label><input type="radio" name="q2" value="c"> 5</label>
+      <legend>2. Quel élément chimique possède le symbole W ? ?</legend>
+      <label><input type="radio" name="q2" value="a" required> Le tungstène</label>
+      <label><input type="radio" name="q2" value="b"> Le wolfram</label>
+      <label><input type="radio" name="q2" value="c"> Le molybdène</label>
     </fieldset>
 
     <fieldset>
-      <legend>3. Quel animal dit « miaou » ?</legend>
-      <label><input type="radio" name="q3" value="a" required> Le chien</label>
-      <label><input type="radio" name="q3" value="b"> Le chat</label>
-      <label><input type="radio" name="q3" value="c"> Le cheval</label>
+      <legend>3. Quel événement est généralement considéré comme le début de la Révolution française ?</legend>
+      <label><input type="radio" name="q3" value="a" required> Le traité de Versailles </label>
+      <label><input type="radio" name="q3" value="b"> La prise de la Bastille </label>
+      <label><input type="radio" name="q3" value="c"> Le sacre de Napoléon </label>
     </fieldset>
 
     <fieldset>
-      <legend>4. Combien font 2 + 2 ?</legend>
-      <label><input type="radio" name="q4" value="a" required> 6</label>
-      <label><input type="radio" name="q4" value="b"> 4</label>
-      <label><input type="radio" name="q4" value="c"> 3</label>
+      <legend>4. Quelle planète possède la période de révolution autour du Soleil la plus courte ? </legend>
+      <label><input type="radio" name="q4" value="a" required> Vénus </label>
+      <label><input type="radio" name="q4" value="b"> Mercure </label>
+      <label><input type="radio" name="q4" value="c"> Mars </label>
     </fieldset>
 
     <fieldset>
-      <legend>5. Quel sport se joue avec un ballon ovale et des poteaux ?</legend>
-      <label><input type="radio" name="q5" value="a" required> Le handball</label>
-      <label><input type="radio" name="q5" value="b"> Le football</label>
-      <label><input type="radio" name="q5" value="c"> Le rugby</label>
+      <legend>5. Combien de côtés possède un hexagone ?</legend>
+      <label><input type="radio" name="q5" value="a" required> 4 </label>
+      <label><input type="radio" name="q5" value="b"> 8 </label>
+      <label><input type="radio" name="q5" value="c"> 6 </label>
     </fieldset>
 
     <fieldset>
-      <legend>6. Dans quel pays se trouve la ville de Rome ?</legend>
-      <label><input type="radio" name="q6" value="a" required> Espagne</label>
-      <label><input type="radio" name="q6" value="b"> Italie</label>
-      <label><input type="radio" name="q6" value="c"> France</label>
+      <legend>6. Qui a écrit « Les Misérables » ? ?</legend>
+      <label><input type="radio" name="q6" value="a" required> Emile Zola </label>
+      <label><input type="radio" name="q6" value="b"> Victor Hugo </label>
+      <label><input type="radio" name="q6" value="c"> George Sand </label>
     </fieldset>
 
     <fieldset>
-      <legend>7. Quelle planète habitons-nous ?</legend>
-      <label><input type="radio" name="q7" value="a" required> Vénus</label>
-      <label><input type="radio" name="q7" value="b"> Mars</label>
-      <label><input type="radio" name="q7" value="c"> La Terre</label>
+      <legend>7. Quel est le plus grand continent du monde par sa superficie ?</legend>
+      <label><input type="radio" name="q7" value="a" required> L'Amérique du Nord </label>
+      <label><input type="radio" name="q7" value="b"> L'Europe </label>
+      <label><input type="radio" name="q7" value="c"> L'Asie </label>
     </fieldset>
 
     <fieldset>
@@ -169,10 +207,10 @@
     </fieldset>
 
     <fieldset>
-      <legend>9. Quelle planète est surnommée la planète rouge ?</legend>
-      <label><input type="radio" name="q9" value="a" required> Pluton</label>
-      <label><input type="radio" name="q9" value="b"> Vénus</label>
-      <label><input type="radio" name="q9" value="c"> Mars</label>
+      <legend>9. Quel est le résultat de 15 × 4 ?</legend>
+      <label><input type="radio" name="q9" value="a" required> 70 </label>
+      <label><input type="radio" name="q9" value="b"> 50 </label>
+      <label><input type="radio" name="q9" value="c"> 60 </label>
     </fieldset>
 
     <fieldset>
@@ -190,18 +228,39 @@
     </fieldset>
 
     <fieldset>
-      <legend>12. Quel super-héros porte une cape rouge et une tenue bleue ?</legend>
-      <label><input type="radio" name="q12" value="a" required> Iron Man</label>
-      <label><input type="radio" name="q12" value="b"> Batman</label>
-      <label><input type="radio" name="q12" value="c"> Superman</label>
+      <legend>12. Quel est le symbole chimique de l'or ?</legend>
+      <label><input type="radio" name="q12" value="a" required> Au </label>
+      <label><input type="radio" name="q12" value="b"> Ag </label>
+      <label><input type="radio" name="q12" value="c"> Fe </label>
     </fieldset>
 
     <button type="submit">Voir mon score</button>
     <button type="button" id="recommencer">Recommencer</button>
     <p id="resultat" role="status"></p>
   </form>
+  
+  <section id="classement-section">
+  <h2>Meilleurs scores</h2>
+  <p id="classement-message" role="status"></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Place</th>
+        <th>Pseudo</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody id="classement"></tbody>
+  </table>
+</section>
 
- <script>
+   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+   <script>
+      const supabaseClient = window.supabase.createClient(
+        "https://paywqrdwcomvtqbvhfjm.supabase.co",
+        "sb_publishable_ORQ95jW-UOLmxM7_MATlRA_rUGs4x6Z"
+   );
+
   const quiz = document.getElementById("quiz");
   const resultat = document.getElementById("resultat");
   const barreProgression = document.getElementById("progression");
@@ -219,7 +278,7 @@
     q9: "c",
     q10: "a",
     q11: "b",
-    q12: "c"
+    q12: "a",
   };
 
   const nombreQuestions = Object.keys(reponses).length;
@@ -227,49 +286,49 @@
 
   const explications = {
     q1: {
-      a: "Paris est la capitale de la France.",
-      b: "Lyon est une grande ville française, mais pas la capitale.",
-      c: "Marseille est une grande ville française, mais pas la capitale."
+      a: "Ulan-Bator est la capitale de la Mongolie.",
+      b: "Beijing est la capitale de la Chine, mais pas de la Mongolie.",
+      c: "Tokyo est la capitale du Japon, mais pas de la Mongolie.",
     },
     q2: {
-      a: "Une semaine compte 7 jours.",
-      b: "Une semaine compte 7 jours, pas 6.",
-      c: "Une semaine compte 7 jours, pas 5."
+      a: "Le tungstène est l'élément chimique avec le symbole W.",
+      b: "Le wolfram est un autre nom pour le tungstène.",
+      c: "Le molybdène est un autre élément chimique.",
     },
     q3: {
-      a: "Le chien aboie ; il ne dit pas miaou.",
-      b: "Le chat miaule : il dit « miaou ».",
-      c: "Le cheval hennit."
+      a: "Le traité de Versailles est un accord diplomatique signé en 1783.",
+      b: "La prise de la Bastille est un événement clé de la Révolution française.",
+      c: "Le sacre de Napoléon est un événement historique important.",
     },
     q4: {
-      a: "2 + 2 donne 4, pas 6.",
-      b: "2 + 2 = 4.",
-      c: "2 + 2 donne 4, pas 3."
+      a: "Vénus a une periode de révolution autour du soleil plus longue que Mercure.",
+      b: "Mercure a la periode de révolution autour du Soleil la plus courte.",
+      c: "Mars a une periode de révolution autour du Soleil plus longue que Vénus.",
     },
     q5: {
-      a: "Le handball se joue avec un ballon rond.",
-      b: "Le football se joue avec un ballon rond.",
-      c: "Le rugby se joue avec un ballon ovale et des poteaux."
+      a: "Une figure avec 4 côtés c'est un carré.",
+      b: "Une figure avec 8 côtés c'est un octogone.",
+      c: "Une figure avec 6 côtés c'est un hexagone.",
     },
     q6: {
-      a: "Rome est en Italie, pas en Espagne.",
-      b: "Rome est la capitale de l’Italie.",
-      c: "Rome n’est pas en France."
+      a: "Emile Zola a écrit Germinal .",
+      b: "Victor Hugo a écrit Les Misérables .",
+      c: "George Sand a écrit Indiana .",
     },
     q7: {
-      a: "Vénus est une autre planète.",
-      b: "Mars est une autre planète.",
-      c: "Nous habitons sur la Terre."
+      a: "L'Amerique du Nord a une superficie de 24,7 millions de km².",
+      b: "L'Europe a une superficie de 10,4 millions de km².",
+      c: "L'Asie a une superficie de 44,5 millions de km².", 
     },
     q8: {
-      a: "Un violon n’a pas 88 touches.",
+      a: "Un violon n’a pas 88 touches mais a 4 cordes.",
       b: "Un piano standard possède généralement 88 touches.",
-      c: "Une guitare n’a pas 88 touches."
+      c: "Une guitare n’a pas 88 touches mais que des cordes."
     },
     q9: {
-      a: "Pluton est une planète naine, mais ce n’est pas la planète rouge.",
-      b: "Vénus n’est pas surnommée la planète rouge.",
-      c: "Mars est surnommée la planète rouge à cause de sa couleur."
+      a: "15x4 ne font pas 70.",
+      b: "15x4 font pas 50.",
+      c: "15x4 font bien 60."
     },
     q10: {
       a: "Mickey Mouse est reconnaissable à ses grandes oreilles rondes.",
@@ -282,9 +341,9 @@
       c: "Hermione Granger est l’amie de Harry Potter."
     },
     q12: {
-      a: "Iron Man porte une armure, pas cette cape.",
-      b: "Batman porte généralement une cape noire.",
-      c: "Superman porte une cape rouge et une tenue bleue."
+      a: "Le symbole chimique de l'or est Au.",
+      b: "Le symbole chimique de l'argent est Ag.",
+      c: "Le symbole chimique du fer est Fe.",
     }
   };
 
@@ -308,6 +367,42 @@
     });
   }
 
+  async function afficherClassement() {
+  const corpsClassement = document.getElementById("classement");
+  const messageClassement = document.getElementById("classement-message");
+
+  const { data, error } = await supabaseClient
+    .from("scores")
+    .select("pseudo, score")
+    .order("score", { ascending: false })
+    .limit(10);
+
+  if (error) {
+    console.error(error);
+    messageClassement.textContent = "Impossible de charger le classement.";
+    return;
+  }
+
+  corpsClassement.replaceChildren();
+  messageClassement.textContent = "";
+
+  data.forEach(function (ligne, index) {
+    const tr = document.createElement("tr");
+    const place = document.createElement("td");
+    const pseudo = document.createElement("td");
+    const score = document.createElement("td");
+
+    place.textContent = String(index + 1);
+    pseudo.textContent = ligne.pseudo;
+    score.textContent = `${ligne.score} / ${nombreQuestions}`;
+
+    tr.append(place, pseudo, score);
+    corpsClassement.appendChild(tr);
+  });
+}
+
+afficherClassement();
+
   quiz.addEventListener("change", mettreAJourProgression);
   mettreAJourProgression();
 
@@ -319,7 +414,7 @@
     resultat.className = "";
   });
 
-  quiz.addEventListener("submit", function (evenement) {
+  quiz.addEventListener("submit", async function (evenement) {
     evenement.preventDefault();
     effacerCorrections();
 
@@ -371,7 +466,22 @@
     resultat.className = classe;
     resultat.textContent =
       `Tu as obtenu ${score} bonne(s) réponse(s) sur ${nombreQuestions}. ${message}`;
+
+    const pseudo = document.getElementById("pseudo").value.trim();
+
+    const { error } = await supabaseClient
+      .from("scores")
+      .insert({ pseudo: pseudo, score: score });
+
+    if (error) {
+      console.error(error);
+      resultat.textContent += " Le score n’a pas pu être enregistré.";
+      return;
+    }
+
+    await afficherClassement();
   });
+
 </script>
 </body>
 </html>
